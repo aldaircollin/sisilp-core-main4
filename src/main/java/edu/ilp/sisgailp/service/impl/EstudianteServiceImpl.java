@@ -16,5 +16,4 @@ public class EstudianteServiceImpl implements IEstudianteService {
     public List<Estudiante> listarEstudiantes() {
         return this.estudianteDao.findAll();
     }
-
 }

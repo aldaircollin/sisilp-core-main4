@@ -18,18 +18,6 @@ import java.util.List;
 @RequestMapping("login")
 public class PruebaController {
 
-    @Autowired
-    private IPersonaService personaService;
-    @GetMapping("/listaPersonas")
-    public List<Persona> listaPersonas(){
-        return this.personaService.listarPersonas();}
-
-    @Autowired
-    private IEstudianteService estudianteService;
-    @GetMapping("/listaEstudiantes")
-    public List<Estudiante>listaEstudiantes(){
-        return this.estudianteService.listarEstudiantes();
-    }
 
     @Autowired
     private IEscuelaService escuelaService;
@@ -47,6 +35,19 @@ public class PruebaController {
     @GetMapping("/buscarEscuelaByIdAndDenominacion")
     public Escuela buscarEscuelaByIdAndDenominacion(@RequestParam Long idescuela,@RequestParam String nombre){
         return this.escuelaService.buscarEscuelaByIdAndDenominacion(idescuela,nombre);
+    }
+
+    @Autowired
+    private IPersonaService personaService;
+    @GetMapping("/listaPersonas")
+    public List<Persona> listaPersonas(){
+        return this.personaService.listarPersonas();}
+
+    @Autowired
+    private IEstudianteService estudianteService;
+    @GetMapping("/listaEstudiantes")
+    public List<Estudiante>listaEstudiantes(){
+        return this.estudianteService.listarEstudiantes();
     }
 
 
